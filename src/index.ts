@@ -47,23 +47,15 @@ async function main() {
     );
     console.log("PoolState:", poolState.toBase58());
 
-    const poolInfo = await connection.getAccountInfo(poolState);
-    if (!poolInfo) {
-      console.log(`❌ Pool ${poolState.toBase58()} does not exist on-chain.`);
-    } else {
-      console.log(`✅ Pool ${poolState.toBase58()} exists on-chain.`);
-    }
+    // const poolInfo = await connection.getAccountInfo(poolState);
+    // if (!poolInfo) {
+    //   console.log(`❌ Pool ${poolState.toBase58()} does not exist on-chain.`);
+    // } else {
+    //   console.log(`✅ Pool ${poolState.toBase58()} exists on-chain.`);
+    // }
 
+    console.log("Derived token0Vault:", token0Vault.toString());
     console.log("Derived token1Vault:", token1Vault.toString());
-    console.log("tokenMint:", tokenAddress1);
-
-    // Step 2: Check if the token vault account exists
-    const tokenVaultInfo = await connection.getAccountInfo(token1Vault);
-    if (!tokenVaultInfo) {
-      console.log("Token vault account does not exist.");
-      return;
-    }
-    console.log("TokenVaultInfo:", tokenVaultInfo);
 
     // Step 3: Fetch token balance directly
     try {

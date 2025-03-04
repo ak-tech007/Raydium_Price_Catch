@@ -66,8 +66,6 @@ export async function monitorNewTokens(
             const POOL_OWNER = "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL";
             const WSOL_MINT = "So11111111111111111111111111111111111111112";
 
-            console.log("postTokenBalances", postTokenBalances);
-
             const baseInfo = postTokenBalances?.find(
               (balance) =>
                 balance.owner === POOL_OWNER && balance.mint !== WSOL_MINT
